@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signin.css" />
+    <title>Casdastro</title>
+</head>
+<header>
+</header>
+
+<body>
+    <div class="main-content">
+        <div class="main-box">
+            <h1 th:text="${mnovoUsuario}"></h1>
+            <p>Seja Bem vindo(a)</p>
+            <form class="form" action="CriarUsuario" method="post">
+                <input type="text" name="nome" id="nome" placeholder="Nome">
+                <input type="text" name="email" id="email" placeholder="Email">
+                <input type="text" name="senha" id="senha" placeholder="Senha">
+                <button type="submit" value="ResponseTest">Criar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

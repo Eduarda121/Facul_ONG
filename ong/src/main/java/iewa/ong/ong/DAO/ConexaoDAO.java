@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class ConexaoDAO {
     public Connection connect() {
         try {
-            Connection conn;
+            Connection conn = null;
             String BD = "ongs";
             String localBD = "localhost";
             String usuario = "root";

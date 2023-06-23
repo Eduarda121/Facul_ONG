@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-OngApplication<ong>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "iewa.ong.ong.OngApplication",
+            "projectName": "ong",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

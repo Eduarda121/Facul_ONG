@@ -1,6 +1,20 @@
-CREATE TABLE usuarios{
-    id INT AUTO_INCREMENT PRIMARY key NOT NULL ,
-    nome varchar(250) NOT NULL,
-    email varchar(250) NOT NULL,
-    senha VARCHAR(50) NOT NULL
-}
+CREATE TABLE doacoes (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  nomeDoador varchar(100) DEFAULT NULL,
+  descricao varchar(250) DEFAULT NULL,
+  quantia float DEFAULT NULL,
+  quantidade int(11) DEFAULT NULL,
+  data datetime DEFAULT NULL,
+  PRIMARY KEY (id)
+)
+
+CREATE TABLE usuarios (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  razaoSocial varchar(250) NOT NULL,
+  email varchar(250) NOT NULL,
+  senha varchar(50) NOT NULL,
+  telefone varchar(100) DEFAULT NULL,
+  CP varchar(100) DEFAULT NULL,
+  endereco varchar(100) DEFAULT NULL,
+  PRIMARY KEY (id)
+) 

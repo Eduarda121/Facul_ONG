@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter';
+}
+
+body {
+    width: 100%;
+    height: 100hv;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3d9ff;
+
+}
+
+.container {
+    width: 80%;
+    height: 500px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+
+}
+
+.firt-colum {
+    width: 50%;
+    height: 500px;
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;
+    background-color: #a63ae6;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.second-colum {
+    width: 49.5%;
+    height: 500px;
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffff;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+
+.firt-colum h2 {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-family: Helvetica, sans-serif;
+}
+
+.firt-colum p {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    margin-top: 90px;
+    font-size: 23px;
+    color: #ffff;
+}
+
+
+.btnn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #f3d9ff;
+    color: black;
+    font-family: Akzidenz Grotesk, sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnn:hover {
+    background-color: #e946ff;
+}
+
+.second-colum h2 {
+    text-align: center;
+    color: black;
+    font-size: 35px;
+    font-family: Helvetica, sans-serif;
+}
+
+
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #6d6d6d;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #f3d9ff;
+    color: black;
+    font-family: Akzidenz Grotesk, sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #a63ae6;
+}
+
+.esqueci-senha {
+    text-align: center;
+    color: black;
+    font-size: 35px;
+    font-family: Helvetica, sans-serif;
+}
+
+a {
+    outline: none;
+    color: black;
+    font-family: Akzidenz Grotesk, sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}

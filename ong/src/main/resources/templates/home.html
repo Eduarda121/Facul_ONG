@@ -2,92 +2,80 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="home.css" />
-    <title>Casdastro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicial</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="home.css">
 </head>
-<header>
-</header>
 
 <body>
-    <h1 th:text="${mhome}"></h1>
-
-
-    <strong>Usuários</strong>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Ações</th>
-        </tr>
-        <tr th:each="usuario : ${listausuarios}">
-            <td th:text="${usuario.id}"></td>
-            <td contenteditable="true" class="editable-cell" th:text="${usuario.nome}"></td>
-            <td contenteditable="true" class="editable-cell" th:text="${usuario.email}"></td>
-            <td>
-                <form th:action="@{/usuario/{id}/atualizar(id=${usuario.id})}" method="post" onsubmit="updateValues(this)">
-                    <input type="hidden" name="id" th:value="${usuario.id}" />
-                    <input type="hidden" name="nome" class="nome-input" />
-                    <input type="hidden" name="email" class="email-input" />
-                    <button type="submit">Editar</button>
-                </form>
-                <form th:action="@{/usuario/{id}(id=${usuario.id})}" method="post">
-                    <input type="hidden" name="_method" value="delete" />
-                    <button type="submit">Excluir</button>
-                </form>
-            </td>
-        </tr>
-    </table>
-
-    <h1></h1>
-    <strong>Novo Usuário</strong>
-    <form class="form" action="CriarUsuario" method="post">
-        <input type="text" name="nome" id="nome" placeholder="Nome">
-        <input type="text" name="email" id="email" placeholder="Email">
-        <input type="text" name="senha" id="senha" placeholder="Senha">
-        <button type="submit" value="ResponseTest">Criar</button>
-    </form>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#"><i class='bx bx-user-plus'></i> Cadastrar Doador</a></li>
+                <li><a href="novaDoacao"><i class='bx bx-donate-heart' style='color:#ffffff' ></i> Cadastrar Doação</a></li>
+                <li><a href="index.html"><i class='bx bx-exit' style='color:#ffffff'></i> Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 th:text="${mnovaDoacao}"></h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nome Doador</th>
+                <th>Descrição</th>
+                <th>Quantia</th>
+                <th>Quantidade</th>
+                <th>Data Crição</th>
+                <th>Ações</th>
+            </tr>
+            <tr th:each="doacao : ${listadoacoes}">
+                <td th:text="${doacao.id}"></td>
+                <td contenteditable="true" class="editable-cell" th:text="${doacao.descricao}"></td>
+                <td contenteditable="true" class="editable-cell" th:text="${doacao.nomeDoador}"></td>
+                <td contenteditable="true" class="editable-cell" th:text="${doacao.quantia}"></td>
+                <td contenteditable="true" class="editable-cell" th:text="${doacao.quantidade}"></td>
+                <td th:text="${#dates.format(doacao.data, 'dd/MM/yyyy')}"></td>
+                <td class="acoes-column">
+                    <form th:action="@{/doacao/{id}/atualizar(id=${doacao.id})}" method="post"
+                        onsubmit="updateValues(this)">
+                        <input type="hidden" name="id" th:value="${doacao.id}" />
+                        <input type="hidden" name="descricao" class="descricao-input" />
+                        <input type="hidden" name="nomeDoador" class="nomeDoador-input" />
+                        <input type="hidden" name="quantia" class="quantia-input" />
+                        <input type="hidden" name="quantidade" class="quantidade-input" />
+                        <button type="submit" class="btn-acao"><i class='bx bx-border bxs-edit-alt  btn-editar '><span> Editar</span></i></button>
+                    </form>
+                    <form th:action="@{/doacao/{id}(id=${doacao.id})}" method="post">
+                        <input type="hidden" name="_method" value="delete" />
+                        <button type="submit" class="btn-acao "><i class='bx  bx-border bx-trash-alt btn-deletar'></i></button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 
 </html>
 
 <script>
-     function updateValues(form) {
+
+    function updateValues(form) {
         var row = form.parentNode.parentNode;
         var editableCells = row.getElementsByClassName('editable-cell');
-        var nomeInput = row.getElementsByClassName('nome-input')[0];
-        var emailInput = row.getElementsByClassName('email-input')[0];
+        var descricaoInput = row.getElementsByClassName('descricao-input')[0];
+        var nomeDoadorInput = row.getElementsByClassName('nomeDoador-input')[0];
+        var quantiaInput = row.getElementsByClassName('quantia-input')[0];
+        var quantidadeInput = row.getElementsByClassName('quantidade-input')[0];
 
-        nomeInput.value = editableCells[0].innerText;
-        emailInput.value = editableCells[1].innerText;
+        descricaoInput.value = editableCells[0].innerText;
+        nomeDoadorInput.value = editableCells[1].innerText;
+        quantiaInput.value = editableCells[2].innerText;
+        quantidadeInput.value = editableCells[3].innerText;
+
+        row.classList.add('selected-row');
     }
+
 </script>
-
-<style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    th,
-    td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-
-    tr:hover {
-        background-color: #f5f5f5;
-    }
-
-    .editing {
-        background-color: #F5F5F5;
-    }
-</style>

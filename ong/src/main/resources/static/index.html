@@ -1,12 +1,37 @@
-<html>
-   <head>
-     <title>Spring Boot</title>
-     <link rel="stylesheet" type="text/css" href="estilo.css">
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, 
-              initial-scale=1.0">
-   </head>
-    <body>
-        <a href="home">HOME</a>
-    </body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Cadastro</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content first-content">
+            <div class="firt-colum">
+                <h2 class="title">Bem vindo(a)!</h2>
+                <p class="description">Cadastre-se agora e experimente a revolução da nossa plataforma.<br>Potencialize
+                    sua eficiência e tranforme <br>sua gestão dos sonhos em realidade!<br><br><br><br><br></p>
+                <button class="btnn"><a href="novoUsuario">Cadastre-se</a></button>
+            </div>
+
+            <div class="second-colum">
+                <h2 class="title">Acesse sua conta</h2><br><br><br>
+                <form class="form" action="/login" method="post">
+                    <input type="email" name="email" placeholder="Email"><br><br>
+                    <input type="password" name="senha" placeholder="Senha"><br><br><br><br><br>
+                    <button class="btn" type="submit">Entrar</button>
+                    <a href="#" class="Esqueci senha">Esqueci minha senha</a>
+                </form>
+                <div th:if="${error}" class="error-message">
+                    <p th:text="${error}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

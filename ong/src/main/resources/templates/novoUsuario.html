@@ -5,25 +5,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="signin.css" />
+    <link rel="stylesheet" href="novoUsuario.css" />
     <title>Casdastro</title>
 </head>
 <header>
 </header>
 
 <body>
-    <div class="main-content">
-        <div class="main-box">
-            <h1 th:text="${mnovoUsuario}"></h1>
-            <p>Seja Bem vindo(a)</p>
+    <div class="container">
+        <div class="container">
+            <h1>Cadastro do doador</h1><br><br><br><br>
             <form class="form" action="CriarUsuario" method="post">
-                <input type="text" name="nome" id="nome" placeholder="Nome">
-                <input type="text" name="email" id="email" placeholder="Email">
-                <input type="text" name="senha" id="senha" placeholder="Senha">
-                <button type="submit" value="ResponseTest">Criar</button>
+
+                <div class="input-group">
+                    <input type="text" name="razaoSocial" id="razaoSocial" placeholder="Razão Social" required>
+                    <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="CP" id="CP" placeholder="CNPJ/CPF" required>
+                    <input type="text" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="telefone" id="telefone" placeholder="Telefone" required>
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required><br><br><br><br><br><br>
+                </div>
+                <button type="submit" value="ResponseTest">Cadastrar</button>
+                <button type="sair" onclick="window.history.back()">Voltar</button>
             </form>
         </div>
     </div>
 </body>
+
 
 </html>
